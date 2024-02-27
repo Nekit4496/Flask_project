@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы программирования</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+
+<header>
+    <h1>Курсы программирования</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">О курсах</a></li>
+            <li><a href="#courses">Курсы</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="about">
+        <h2>О курсах</h2>
+        <p>Здесь можно добавить информацию о вашей школе или курсах.</p>
+    </section>
+
+    <section id="courses">
+        <h2>Курсы</h2>
+        <p>Здесь можно представить список доступных курсов.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Здесь можно предоставить контактную информацию.</p>
+    </section>
+
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2024 Курсы программирования. Все права защищены.</p>
+</footer>
+
+</body>
+</html>
