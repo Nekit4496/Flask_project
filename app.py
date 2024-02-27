@@ -23,7 +23,7 @@ class Profile(db.Model):
     age = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
-
+ 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
