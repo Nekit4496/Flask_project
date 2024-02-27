@@ -57,6 +57,3 @@ def index():
 print(math.sqrt(4))
 if __name__ == '__main__':
     app.run(debug=True)
-
-#commit1
-#commit2
