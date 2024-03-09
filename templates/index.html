@@ -2,6 +2,13 @@
 {% extends 'landing.html' %}
 
 {% block content %}
+{{ super() }}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+
+
+
     <h2>Добро пожаловать!</h2>
     <p>Вы находитесь на главной странице нашего сайта. Здесь вы можете найти информацию о курсах, предоставляемых нашей школой программирования.</p>
 {% endblock %}

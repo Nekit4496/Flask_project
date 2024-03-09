@@ -46,3 +46,14 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+body .flash {padding: 10px;}
+body .flash.success {
+    border: 1px solid #21DB56;
+    background: #AEFFC5;
+}
+body .flash.error {
+    border: 1px solid #FF4343;
+    background: #FF9C9C;
+}
+

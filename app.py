@@ -1,14 +1,31 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import math
+from flask_login import LoginManager
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users20.db'
+app.config['SECRET_KEY'] = 'ADFH898CEuoim^*(7nm(yn97qynME)('
 db = SQLAlchemy(app)
 
 # объект миграции
 migrate = Migrate(app, db)
+
+#объект логин-менеджер
+#login_manager = LoginManager(app)
+class UserLogin:
+    def is_authenticated(self):
+        return True #if user is authenticated
+
+    def is_active(self):
+        return True #if user is authenticated
+
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return str()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -32,6 +49,10 @@ def register():
 
         # Создание нового объекта пользователя
         new_user = User(username=username, email=email, password=password)
+        if new_user:
+            flash('Успешная регистрация!123', category='success')
+        else:
+            flash('Ошибка регистрации\nВозможно такой пользователь уже существует?', category='error')
 
         # Добавление пользователя в базу данных
         db.session.add(new_user)
